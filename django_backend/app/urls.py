@@ -11,5 +11,5 @@ urlpatterns = [
     path('flight-extra-services/', views.fill_extra_service, name='extra-services'),
     path('flight-seats/', views.choose_seat, name='available-seats'),
     path('payment/', views.make_payment, name='my-payment'),
-    path('flight-tickets/', views.show_booking, name='my-tickets'),
+    path('flight-tickets/', views.show_booking, name='my-tickets')
 ]

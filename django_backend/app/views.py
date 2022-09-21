@@ -1,11 +1,12 @@
-from asyncore import read
 from django.shortcuts import render
-from app.utils.paths import get_international_csv_path
-from app.utils.util import read_csv
+from app.utils.paths import get_meal_menu_csv_path
+from app.utils.util import read_csv, get_country_info
 
 def home(request):
+    countries : list
 
-    return render(request, 'home.html')
+    country_city_code = get_country_info()
+    return render(request, 'home.html', {'country_city_code': country_city_code})
 
 def create_account(request):
     return render(request, 'create_account.html')
@@ -20,7 +21,15 @@ def fill_passenger_info(request):
     return render(request, 'passenger_info.html')
 
 def fill_extra_service(request):
-    return render(request, 'extra_services.html')
+    foods : list 
+    drinks : list
+    
+    path = get_meal_menu_csv_path()
+
+    foods = read_csv(csv_name=path, column_name='Food')
+    drinks = read_csv(csv_name=path, column_name='Drink')
+    
+    return render(request, 'extra_services.html', {"foods": foods, "drinks": drinks})
 
 def choose_seat(request):
     return render(request, 'seat_selection.html')

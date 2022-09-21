@@ -269,3 +269,18 @@
     width: 8px;
     background: repeating-linear-gradient(45deg, black, black 3px, transparent 3px, transparent 6px);
   }
+
+  .economy {
+    color: white;
+    background-color: #43aa8b;
+  }
+
+  .first-class {
+    color: white;
+    background-color: #277da1;
+  }
+
+  .reduced {
+    color: white;
+    background-color: #f8961e;
+  }
