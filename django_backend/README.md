@@ -44,7 +44,7 @@ After all the setup, run below command to open Django web application
 python manage.py  runserver
 ```
 
-and follow your ip address as shown in your anaconda propmt and copy the link in your browser.
+and follow your ip address as shown in your anaconda prompt and copy the link in your browser.
 
 Sample output from my terminal
 
