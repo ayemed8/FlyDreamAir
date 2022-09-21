@@ -1,0 +1,617 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <!-- Bootstrap CSS -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/css/bootstrap.min.css"
+      integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="{% static 'css/styles.css' %}" />
+    <link
+      href="http://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.3.0/css/font-awesome.css"
+      rel="stylesheet"
+      type="text/css"
+    />
+    <link
+      rel="icon"
+      type="image/x-icon"
+      href=" {% static 'assets/favIcon.png'%} "
+    />
+    <title>FlyDreamAir-DepartingFlights</title>
+    <style>
+      .body {
+        min-height: 100vh;
+        display: flex;
+        flex-direction: column;
+      }
+
+      .toggle {
+        --width: 80px;
+        --height: calc(var(--width) / 3);
+
+        position: relative;
+        display: inline-block;
+        width: var(--width);
+        height: var(--height);
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        border-radius: var(--height);
+        cursor: pointer;
+      }
+
+      .toggle input {
+        display: none;
+      }
+
+      .toggle .slider {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        border-radius: var(--height);
+        background-color: #ccc;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .toggle .slider::before {
+        content: "";
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: calc(var(--height));
+        height: calc(var(--height));
+        border-radius: calc(var(--height) / 2);
+        background-color: #fff;
+        box-shadow: 0px 1px 3px rgba(0, 0, 0, 0.3);
+        transition: all 0.4s ease-in-out;
+      }
+
+      .toggle input:checked + .slider {
+        background-color: #2196f3;
+      }
+
+      .toggle input:checked + .slider::before {
+        transform: translateX(calc(var(--width) - var(--height)));
+      }
+
+      .toggle .labels {
+        position: absolute;
+        top: 8px;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        font-size: 12px;
+        font-family: sans-serif;
+        transition: all 0.4s ease-in-out;
+      }
+
+      .toggle .labels::after {
+        content: attr(data-off);
+        position: absolute;
+        right: 5px;
+        color: #4d4d4d;
+        opacity: 1;
+        text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.4);
+        transition: all 0.4s ease-in-out;
+      }
+
+      .toggle .labels::before {
+        content: attr(data-on);
+        position: absolute;
+        left: 5px;
+        color: #ffffff;
+        opacity: 0;
+        text-shadow: 1px 1px 2px rgba(255, 255, 255, 0.4);
+        transition: all 0.4s ease-in-out;
+      }
+
+      .toggle input:checked ~ .labels::after {
+        opacity: 0;
+      }
+
+      .toggle input:checked ~ .labels::before {
+        opacity: 1;
+      }
+    </style>
+  </head>
+  <body class="body">
+    <nav class="navbar navbar-expand-lg navbar-dark">
+      <div class="container-fluid">
+        <a id="HeaderLogo" class="navbar-brand" href="#"><b>FlyDreamAir</b></a>
+        <button
+          class="navbar-toggler"
+          type="button"
+          data-toggle="collapse"
+          data-target="#navbarSupportedContent"
+          aria-controls="navbarSupportedContent"
+          aria-expanded="false"
+          aria-label="Toggle navigation"
+        >
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarSupportedContent">
+          <ul class="navbar-nav mr-auto"></ul>
+          <form id="HeaderContent" class="form-inline my-2 my-lg-0">
+            <p><a class="HeaderLinks" href="#">Manage Booking</a></p>
+            <p><a class="HeaderLinks" href="#">Create Account</a></p>
+            <p><a class="HeaderLinks" href="#">Login</a></p>
+          </form>
+        </div>
+      </div>
+    </nav>
+    <!--MainBody-->
+    <div class="container-fluid">
+      <!--RadioBtn-->
+      <br /><br />
+      <div class="row">
+        <div class="col-lg-12">
+          <div class="form-check form-check-inline">
+            <label
+              style="font-size: large"
+              class="form-check-label"
+              for="inlineRadio1"
+              ><b>Round Trip</b></label
+            >&nbsp;&nbsp;&nbsp;
+            <input
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio1"
+              value="option1"
+            />
+          </div>
+          <div class="form-check form-check-inline">
+            <label
+              style="font-size: large"
+              class="form-check-label"
+              for="inlineRadio2"
+              ><b>One Way</b></label
+            >
+            &nbsp;&nbsp;&nbsp;
+            <input
+              style="width: 20px"
+              class="form-check-input"
+              type="radio"
+              name="inlineRadioOptions"
+              id="inlineRadio2"
+              value="option2"
+            />
+          </div>
+        </div>
+      </div>
+      <br />
+      <div class="row">
+        <!-- From countries -->
+        <div class="col-lg-2 col-md-4">
+          <div class="form-group">
+            <label for="exampleInputEmail1" style="font-size: small"
+              ><b>From</b></label
+            >
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+
+        <!-- To countries -->
+        <div class="col-lg-2 col-md-4">
+          <div class="form-group">
+            <label for="exampleInputEmail1" style="font-size: small"
+              ><b>To</b></label
+            >
+            <input type="text" class="form-control" />
+          </div>
+        </div>
+
+        <!-- Depart Date -->
+        <div class="col-lg-2 col-md-4">
+          <div class="form-group">
+            <label for="exampleInputEmail1" style="font-size: small"
+              ><b>Depart</b></label
+            >
+            <input type="date" class="form-control" />
+          </div>
+        </div>
+
+        <!-- Return Date -->
+        <div class="col-lg-2 col-md-4">
+          <div class="form-group">
+            <label for="exampleInputEmail1" style="font-size: small"
+              ><b>Return</b></label
+            >
+            <input type="date" class="form-control" />
+          </div>
+        </div>
+
+        <!-- Select total number of passenger -->
+        <div class="col-lg-2 col-md-4">
+          <div class="form-group">
+            <label for="exampleInputEmail1" style="font-size: small"
+              ><b>Select Passenger</b></label
+            >
+            <select class="form-control" id="exampleFormControlSelect1">
+              <option>1 Adults</option>
+              <option>2 Adults</option>
+              <option>3 Adults</option>
+              <option>4 Adults</option>
+              <option>5 Adults</option>
+            </select>
+          </div>
+        </div>
+
+        <!-- Search button box -->
+        <div class="col-lg-2 col-md-4">
+          <div class="form-group">
+            <a href="#" class="btn btn-primary form-control">Search</a>
+          </div>
+        </div>
+      </div>
+
+      <div class="row">
+        <div class="col-lg-3">
+          <label class="toggle">
+            <input type="checkbox" />
+            <span class="slider"></span>
+            <span
+              style="padding-bottom: 6px"
+              class="labels"
+              data-on="Depart"
+              data-off="Return"
+            ></span>
+          </label>
+          <div class="card text-white mb-3">
+            <div
+              style="background-color: white; border: 1px solid #82c6fd"
+              class="card-body"
+            >
+              <center>
+                <p class="card-title"><b>Filter</b></p>
+              </center>
+              <div>
+                <br />
+                <p style="font-size: small">Price Range</p>
+                <input
+                  style="width: 100%"
+                  type="range"
+                  name="range"
+                  step="50000"
+                  min="500"
+                  max="1000000"
+                  value=""
+                  onchange="rangePrimary.value=value"
+                />
+                <p style="float: left"><b>500</b></p>
+                <input
+                  style="
+                    border: none;
+                    float: right;
+                    width: 70px;
+                    font-weight: bold;
+                  "
+                  id="rangePrimary"
+                  value="100000"
+                />
+              </div>
+              <br />
+              <br />
+              <div class="form-group">
+                <label for="exampleInputEmail1" style="font-size: small"
+                  ><b>Departure Time</b></label
+                >
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>Before 8 am</option>
+                  <option>6 am to - 12 am</option>
+                  <option>6 am to - 12 am</option>
+                  <option>6 am to - 12 am</option>
+                  <option>6 am to - 12 am</option>
+                </select>
+              </div>
+              <div class="form-group">
+                <label for="exampleInputEmail1" style="font-size: small"
+                  ><b>Arrival Time</b></label
+                >
+                <select class="form-control" id="exampleFormControlSelect1">
+                  <option>6 am to - 12 am</option>
+                  <option>6 am to - 12 am</option>
+                  <option>6 am to - 12 am</option>
+                  <option>6 am to - 12 am</option>
+                  <option>6 am to - 12 am</option>
+                </select>
+              </div>
+              <br />
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-9">
+          <label
+            style="font-size: large; margin-bottom: 16px"
+            class="form-check-label"
+            for="inlineRadio1"
+            ><b>Departing Flights</b></label
+          >
+          <div style="border: 1px solid #82c6fd" class="card">
+            <div
+              class="card-body"
+              style="
+                padding-top: 10px;
+                padding-bottom: 1px;
+                padding-left: 20px;
+                padding-right: 20px;
+              "
+            >
+              <p class="card-title" style="font-size: x-small">
+                <b>FlyDreamAir</b>
+              </p>
+              <div class="row">
+                <div class="col-lg-1">
+                  <img src="{% static 'assets/FDIcon.png'%}" width="80" />
+                </div>
+                <div class="col-lg-6">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+                      <label style="float: right">
+                        <label
+                          style="
+                            cursor: pointer;
+                            font-size: small;
+                            color: black;
+                            margin: 0%;
+                            padding: 0%;
+                          "
+                          ><br /><b>16:00</b><br />
+                          <label style="margin: 0%; padding: 0%"
+                            >YGN</label
+                          ></label
+                        ></label
+                      >
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                      <img
+                        class="img-fluid"
+                        style="margin-top: 30px"
+                        src="{% static 'assets/BookingDesignIcon.png'%}"
+                      />
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+                      <label style="float: left">
+                        <label
+                          style="
+                            cursor: pointer;
+                            font-size: small;
+                            color: black;
+                            margin: 0%;
+                            padding: 0%;
+                          "
+                          ><br /><b>16:00</b><br />
+                          <label style="margin: 0%; padding: 0%"
+                            >AUS</label
+                          ></label
+                        ></label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label style="float: left">
+                    <label
+                      style="
+                        cursor: pointer;
+                        font-size: large;
+                        color: black;
+                        margin: 0%;
+                        padding: 0%;
+                      "
+                      ><br />1h 20m<br
+                    /></label>
+                  </label>
+                  <label style="float: right"
+                    ><label
+                      style="
+                        cursor: pointer;
+                        font-size: large;
+                        color: black;
+                        margin: 0%;
+                        padding: 0%;
+                      "
+                      ><br />No Stop<br
+                    /></label>
+                  </label>
+                </div>
+                <div class="col-lg-2">
+                  <label style="float: right; margin-top: 10px">
+                    <label
+                      style="
+                        cursor: pointer;
+                        font-size: large;
+                        color: black;
+                        margin: 0%;
+                        padding-top: 0%;
+                      "
+                      ><b>USD 560</b><br />
+                      <a
+                        style="font-size: small"
+                        href="#"
+                        class="btn btn-primary form-control"
+                        >Select</a
+                      >
+                    </label>
+                  </label>
+                </div>
+              </div>
+              <hr />
+              <p style="font-size: small">30kg Per Person</p>
+            </div>
+          </div>
+          <br />
+          <div style="border: 1px solid #82c6fd" class="card">
+            <div
+              class="card-body"
+              style="
+                padding-top: 10px;
+                padding-bottom: 1px;
+                padding-left: 20px;
+                padding-right: 20px;
+              "
+            >
+              <p class="card-title" style="font-size: x-small">
+                <b>FlyDreamAir</b>
+              </p>
+              <div class="row">
+                <div class="col-lg-1">
+                  <img src="{% static 'assets/FDIcon.png'%}" width="80" />
+                </div>
+                <div class="col-lg-6">
+                  <div class="row">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+                      <label style="float: right">
+                        <label
+                          style="
+                            cursor: pointer;
+                            font-size: small;
+                            color: black;
+                            margin: 0%;
+                            padding: 0%;
+                          "
+                          ><br /><b>16:00</b><br />
+                          <label style="margin: 0%; padding: 0%"
+                            >YGN</label
+                          ></label
+                        ></label
+                      >
+                    </div>
+                    <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+                      <img
+                        class="img-fluid"
+                        style="margin-top: 30px"
+                        src="{% static 'assets/BookingDesignIcon.png'%}"
+                      />
+                    </div>
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-3">
+                      <label style="float: left">
+                        <label
+                          style="
+                            cursor: pointer;
+                            font-size: small;
+                            color: black;
+                            margin: 0%;
+                            padding: 0%;
+                          "
+                          ><br /><b>16:00</b><br />
+                          <label style="margin: 0%; padding: 0%"
+                            >AUS</label
+                          ></label
+                        ></label
+                      >
+                    </div>
+                  </div>
+                </div>
+                <div class="col-lg-3">
+                  <label style="float: left">
+                    <label
+                      style="
+                        cursor: pointer;
+                        font-size: large;
+                        color: black;
+                        margin: 0%;
+                        padding: 0%;
+                      "
+                      ><br />1h 20m<br
+                    /></label>
+                  </label>
+                  <label style="float: right"
+                    ><label
+                      style="
+                        cursor: pointer;
+                        font-size: large;
+                        color: black;
+                        margin: 0%;
+                        padding: 0%;
+                      "
+                      ><br />No Stop<br
+                    /></label>
+                  </label>
+                </div>
+                <div class="col-lg-2">
+                  <label style="float: right; margin-top: 10px">
+                    <label
+                      style="
+                        cursor: pointer;
+                        font-size: large;
+                        color: black;
+                        margin: 0%;
+                        padding-top: 0%;
+                      "
+                      ><b>USD 560</b><br />
+                      <a
+                        style="font-size: small"
+                        href="#"
+                        class="btn btn-primary form-control"
+                        >Select</a
+                      >
+                    </label>
+                  </label>
+                </div>
+              </div>
+              <hr />
+              <p style="font-size: small">30kg Per Person</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <br /><br /><br /><br />
+    <div
+      style="width: 100%; margin-top: auto"
+      id="footer-bottom"
+      class="container-fluid"
+    >
+      <div
+        style="padding-top: 20px; padding-left: 30px; padding-right: 30px"
+        class="row"
+      >
+        <div style="float: left" class="col-lg-6 col-md-6 col-sm-6 col-6">
+          <p style="font-size: small; color: white">&copy; AdobeXD Kit 2017</p>
+        </div>
+        <div class="col-lg-6 col-md-6 col-sm-6 col-6">
+          <p style="float: right">
+            <i style="color: white" class="fa fa-instagram fa-1x center"></i>
+            &nbsp;&nbsp;&nbsp;&nbsp;
+            <i style="color: white" class="fa fa-twitter fa-1x center"></i
+            >&nbsp;&nbsp;&nbsp;&nbsp;
+            <i style="color: white" class="fa fa-facebook fa-1x center"></i>
+          </p>
+        </div>
+      </div>
+    </div>
+
+    <!-- Optional JavaScript -->
+    <!-- jQuery first, then Popper.js, then Bootstrap JS -->
+    <script
+      src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+      integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/popper.js@1.12.9/dist/umd/popper.min.js"
+      integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@4.0.0/dist/js/bootstrap.min.js"
+      integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl"
+      crossorigin="anonymous"
+    ></script>
+  </body>
+</html>

@@ -1,0 +1,72 @@
+.container-fluid{
+    width: 90%;
+}
+#HeaderLogo{
+    font-weight: 600;
+}
+.navbar{
+    background-color: #2699FB;
+    color: white;
+}
+.HeaderLinks{
+color: white;
+padding: 10px;
+font-size: large;
+text-decoration: none !important;
+}
+#HeaderContent{
+    padding-top: 20px;
+}
+
+/*center div*/
+#centerDiv{
+position: fixed;
+left: 50%;
+top: 50%;
+transform: translate(-50%, -50%);
+color: white;
+
+}
+.card-header{
+    background-color: #2699FB;
+    font-size: large;
+}
+.card-body{
+    background-color:#F1F9FF;
+    color: black;
+    padding-left: 50px;
+    padding-right: 50px;
+    
+}
+#LoginBtn{
+    padding-left: 100px;
+    padding-right: 100px;
+}
+input[type=radio] {
+    width: 16px;
+    height: 16px;
+}
+.selector{
+    height: 2000px;
+}
+
+::placeholder {
+    color: #2699FB !important;
+    font-size: x-small!important;
+  }
+
+  #footer-bottom{
+    background-color: #2699FB;
+  }
+  .sc-cart{
+    display: none;
+  }
+  #sc-cart{
+    display: block!important;
+  }
+  .sc-legend{
+    display: none;
+  }
+  #sc-legend{
+    display: block!important;
+  }

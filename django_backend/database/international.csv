@@ -1,0 +1,59 @@
+Country,City,Airport,Code,Duration
+Austria,Vienna,Vienna International Airport,VIE,
+Brazil,São Paulo,São Paulo Guarulhos International Airport,GRU,
+Brazil,Rio de Janeiro,Santos Dumont International Airport,SDU,
+Brazil,Rio de Janeiro,Galeao A.C Jobim International Airport,GIG,
+China,Beijing,Beijing Capital International Airport,PEK,
+China,Guangzhou,Guangzhou Baiyun International Airport,CAN,
+China,Shanghai,Shanghai Pudong International Airport,PVG,
+China,Chengdu,Chengdu Shuangliu International Airport,CTU,
+China,Shanghai,Shanghai Hongqiao International Airport,SHA,
+Czech Republic,Prague,Prague Airport,PRG,
+France,Paris,Paris-Charles de Gaulle International Airport,CDG,
+Germany,Frankfurt,Frankfurt Airport,FRA,22h 05m
+Germany,Munich,Munich International Airport,MUC,21h 05m
+Hungary,Budapest,Budapest Airport,BUD,23h 10m
+India,New Delhi,Indira Gandhi International Airport,DEL,12h 55m
+India,Mumbai,Chhatrapati Shivaji International Airport,BOM,14h 30m
+Indonesia,Jarkata,Soekarno–Hatta International Airport,CGK,7h 50m
+Indonesia,Bali,Bali Ngurah Rai International Airport,DPS,6h 35m
+Italy,Rome,Leonardo da Vinci–Fiumicino Airport,FCO,22h
+Italy,Venice,Venice Marco Polo Airport,VCE,24h
+Italy,Milan,Malpensa International Airport,MXP,22h 30m
+Japan,Tokyo,Tokyo International Airport,HND,9h 45m
+Japan,Osaka,Kansai International Airport,KIX,12h 05m
+Japan,Osaka,Osaka International Airport,ITM,12h 05m
+Japan ,Okinawa,Naha Airport,OKA,14h 05m
+Malaysia,Penang,Penang International Airport,PEN,8h 50m
+Malaysia,Kuala Lumpur,Kuala Lumpur International Airport,KUL,8h 50m
+Myanmar,Yangon,Yangon International Airport,RGN,
+New Zealand,Auckland,Auckland Airport,AKL,3h
+New Zealand,Christchurch,Christchurch Airport,CHC,3h
+New Zealand,Queenstown,Queenstown Airport,ZQN,3h
+New Zealand,Wellington,Wellington International Airport,WLG,3h
+Singapore,Singapore,Changi Airport,SIN,8h 20m
+South Africa,Johannesburg,OR Tambo International Airport,JNB,14h 04m
+South Africa,Cape Town,Cape Town International Airport,CPT,14h 04m
+South Africa,Durban,King Shaka International Airport,DUR,14h 04m
+Spain,Barcelona,Barcelona International Airport,BCN,21h 33m
+Spain,Madrid,Adolfo Suárez Madrid–Barajas Airport,MAD,21h 33m
+Switzerland ,Zurich,Zurich Airport,ZRH,22h 10m
+Thailand,Chiang Mai,Chiang Mai International Airport,CNX,9h 35m
+Thailand,Bangkok,Suvarnabhumi International Airport,BKK,9h 35m
+Thailand,Phuket,Phuket Airport,HKT,9h 35m
+Thailand,Krabi,Krabi Airport,KBV,9h 35m
+United Arab Emirates,Dubai,Dubai International Airport,DXB,14h 30m
+United Arab Emirates,Abu Dhabi,Abu Dhabi International Airport,AUH,14h 40m
+United Kingdom,Manchester,Manchester Airport,MAN,24h 05m
+United Kingdom,Birmingham,Birmingham International Airport,BHX,24h
+United Kingdom,London,London Heathrow Airport,LHR,23h 40m
+United States,New York,John F.Kennedy International Airport,JFK,22h 20m
+United States,New York,Newark Liberty International Airport,EWR,22h 20m
+United States,New York,Laguardia Airport,LGA,22h 20m
+United States,Chicago,O'Hare International Airport,ORD,19h 30m
+United States,Orlando,Orlando International Airport,MCO,20h 05m
+United States,Washington,Ronald Reagan Washington National Airport,DCA,19h 33m
+United States,Miami,Miami International Airport,MIA,19h 11m
+United States,Boston,Boston Logan International Airport,BOS,22h 25m
+Vietnam,Hanoi,Noi Bai International Airport,HAN,12h 40m
+Vietnam,Ho Chi Minh,Tan Son Nhat International Airport,SGN,8h 50m
