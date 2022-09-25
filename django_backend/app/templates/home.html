@@ -3,7 +3,7 @@
 <div class="container-fluid">
   <br />
   <div class="row">
-    <div class="col-lg-12">
+    <div class="col-lg-12" style=" padding-right:2px;">
       <br />
 
       <!-- User input box -->
@@ -11,7 +11,7 @@
         <div
           style="
             background-color: white;
-            border-radius: 10px;
+            border-radius: 10px;  padding-right:10px; padding-left:10px;
             border: 1px solid #3ba3fb;
           "
           class="card-body"
@@ -58,11 +58,12 @@
           <!-- User input row -->
           <div class="row">
             <div class="col-lg-2 col-md-4">
-              <div class="form-group">
+              <div class="form-group"style="width:236px">
                 <label for="exampleInputEmail1" style="font-size: small"
-                  ><b>From</b></label
+                  ><b style="font-size:medium">From</b></label
                 >
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="exampleFormControlSelect1"
+                    style="font-size: small;">
                   {% for info in country_city_code %}
                   <option>{{info}}</option>
                   {% endfor %}
@@ -70,61 +71,67 @@
               </div>
             </div>
             <div class="col-lg-2 col-md-4">
-              <div class="form-group">
+              <div class="form-group" style="padding-left:30px; width:266px">
                 <label for="exampleInputEmail1" style="font-size: small"
-                  ><b>To</b></label
+                  ><b style="font-size:medium">To</b></label
                 >
-                <select class="form-control" id="exampleFormControlSelect1">
+                <select class="form-control" id="exampleFormControlSelect1" style="font-size: small">
                   {% for info in country_city_code %}
                   <option>{{info}}</option>
                   {% endfor %}
                 </select>
               </div>
             </div>
+            
             <div class="col-lg-2 col-md-4">
-              <div class="form-group">
+                
+              <div class="form-group" style="padding-left:60px; width:250px">
                 <label for="exampleInputEmail1" style="font-size: small"
-                  ><b>Depart</b></label
+                  ><b style="font-size:medium">Depart</b></label
                 >
-                <input type="date" class="form-control" />
+                <input type="date" class="form-control" style="font-size: medium; height:40px;" />
               </div>
             </div>
             <div class="col-lg-2 col-md-4">
-              <div class="form-group">
+              <div class="form-group" style="padding-left:45px; width:250px">
                 <label for="exampleInputEmail1" style="font-size: small"
-                  ><b>Return</b></label
+                  ><b style="font-size:medium">Return</b></label
                 >
-                <input type="date" class="form-control" />
+                <input type="date" class="form-control" style="font-size: medium; height: 40px" />
               </div>
             </div>
             <div class="col-lg-2 col-md-4">
-              <div class="form-group">
+              <div class="form-group"style="padding-left:45px">
                 <label for="exampleInputEmail1" style="font-size: small"
-                  ><b>Total Passengers</b></label
+                  ><b style="font-size:medium">Total Passengers</b></label
                 >
-                <input type="number" class="form-control" placeholder="1" />
+                <input type="number" class="form-control" placeholder="1" style="font-size: medium; height: 40px" />
               </div>
             </div>
             <div class="col-lg-2 col-md-4">
+                
               <div class="form-group">
                 <label
                   for="exampleInputEmail1"
-                  style="font-size: small; color: white"
+                  style="font-size: small; color: white;"
                   ><b>Promo Code</b></label
                 >
                 <input
                   type="text"
                   class="form-control"
                   placeholder="Promo Code"
+                  style="font-size: medium; height: 40px; width:100px"
                 />
                 <label
                   for="exampleInputEmail1"
                   style="font-size: small; color: white"
                   ><b>Return</b></label
                 >
+                </br>
                 <a
                   href="{% url 'available-flights' %}"
                   class="btn btn-primary form-control"
+                  style="font-size:15px; width:150px"
                   >Search</a
                 >
               </div>
