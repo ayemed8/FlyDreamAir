@@ -69,17 +69,16 @@
         <div class="collapse navbar-collapse" id="navbarSupportedContent">
           <ul class="navbar-nav mr-auto"></ul>
           <form id="HeaderContent" class="form-inline my-2 my-lg-0">
-            <p>
-              <a class="HeaderLinks" href="{% url 'my-tickets' %}"
-                >Manage Booking</a
-              >
-            </p>
-            <p>
-              <a class="HeaderLinks" href="{% url 'register' %}"
-                >Register</a
-              >
-            </p>
-            <p><a class="HeaderLinks" href="{% url 'login' %}">Login</a></p>
+          
+
+            {% if user.is_authenticated %}
+              <p><a class="HeaderLinks" href="{% url 'my-tickets' %}">Manage Booking</a></p>
+              <p><a class="HeaderLinks" href="#">{{user}}</a></p>
+              <p><a class="HeaderLinks" href="{% url 'logout' %}">Logout</a></p>
+            {% else %}
+              <p> <a class="HeaderLinks" href="{% url 'register' %}">Register</a></p>
+              <p><a class="HeaderLinks" href="{% url 'login' %}">Login</a></p>
+            {% endif %}
           </form>
         </div>
       </div>

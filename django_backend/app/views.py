@@ -1,15 +1,13 @@
 from django.shortcuts import render
 from app.utils.paths import get_meal_menu_csv_path
 from app.utils.util import read_csv, get_country_info
+from django.contrib.auth.decorators import login_required
 
 def home(request):
     countries : list
 
     country_city_code = get_country_info()
     return render(request, 'home.html', {'country_city_code': country_city_code})
-
-def login(request):
-    return render(request, 'login.html')
 
 def choose_flight(request):
     return render(request, 'departing_flights.html')
@@ -34,5 +32,6 @@ def choose_seat(request):
 def make_payment(request):
     return render(request, 'payment_detail.html')
 
+@login_required
 def show_booking(request):
     return render(request, 'my_booking.html')
