@@ -8,9 +8,6 @@ def home(request):
     country_city_code = get_country_info()
     return render(request, 'home.html', {'country_city_code': country_city_code})
 
-def create_account(request):
-    return render(request, 'create_account.html')
-
 def login(request):
     return render(request, 'login.html')
 

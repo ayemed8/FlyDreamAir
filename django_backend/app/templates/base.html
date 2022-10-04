@@ -75,8 +75,8 @@
               >
             </p>
             <p>
-              <a class="HeaderLinks" href="{% url 'create-account' %}"
-                >Create Account</a
+              <a class="HeaderLinks" href="{% url 'register' %}"
+                >Register</a
               >
             </p>
             <p><a class="HeaderLinks" href="{% url 'login' %}">Login</a></p>
@@ -84,6 +84,16 @@
         </div>
       </div>
     </nav>
+
+    <div class="col-md-8">
+      {% if messages  %}
+        {% for message in messages %}
+          <div class="alert alert-{{ message.tags}}">
+            {{ message }}  
+          </div>
+        {% endfor %}
+      {% endif %}
+    </div>
 
     {% block content %} {% endblock %}
 
