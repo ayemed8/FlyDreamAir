@@ -321,17 +321,17 @@
 
     function selectClick() {
       Swal.fire({
-        title: 'Vlidate ticket?',
+        title: 'Confirm ticket?',
         text: "You won't be able to revert this!",
         icon: 'question',
         showCancelButton: true,
         confirmButtonColor: '#3085d6',
         cancelButtonColor: '#d33',
-        confirmButtonText: 'Yes, validate it!'
+        confirmButtonText: 'Yes, confirm'
       }).then((result) => {
         if (result.isConfirmed) {
           Swal.fire(
-            'validated!',
+            'Confirmed!',
             'ticket has been confirmed.',
             'success'
           ).then((res) => {

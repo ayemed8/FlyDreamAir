@@ -213,15 +213,15 @@
               <ul id="sc-legend" class="sc-legend">
                 <li class="sc-legend-item">
                   <div class="sc-legend-bullet first-class"></div>
-                  <p class="sc-legend-description">First Class (€25)</p>
+                  <p class="sc-legend-description">First Class ($25)</p>
                 </li>
                 <li class="sc-legend-item">
                   <div class="sc-legend-bullet economy"></div>
-                  <p class="sc-legend-description">Economy (€15)</p>
+                  <p class="sc-legend-description">Economy ($15)</p>
                 </li>
                 <li class="sc-legend-item">
                   <div class="sc-legend-bullet reduced"></div>
-                  <p class="sc-legend-description">Reduced (€10)</p>
+                  <p class="sc-legend-description">Reduced ($10)</p>
                 </li>
                 <li class="sc-legend-item">
                   <div class="sc-legend-bullet sc-seat-reserved"></div>
@@ -347,7 +347,7 @@
   var element = document.getElementById("container");
   var sc = new Seatchart(element, options);
   sc.addEventListener("submit", function handleSubmit(e) {
-    alert("Total: " + e.total + "€");
+    alert("Total: " + e.total + "$");
   });
 
 
@@ -374,14 +374,13 @@
   for (var i = 0; i < element.length; i++) {
     element[i].addEventListener("click", function () { firstClick() }, false);
   }
+
   function firstClick() {
     var seatNo = event.target || event.srcElement;
-    ht += '<tr> <td> <div class="sc-ticket first-class"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">First Class</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>€25.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    ht += '<tr> <td> <div class="sc-ticket first-class"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">First Class</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>$25.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
     var ele = document.getElementById('slctTb');
     ele.innerHTML = ht;
   }
-
-
 
 
   var element = document.getElementsByClassName('economy');
@@ -390,20 +389,19 @@
   }
   function EconomyClick() {
     var seatNo = event.target || event.srcElement;
-    ht += '<tr> <td> <div class="sc-ticket economy"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Economy</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>€15.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    ht += '<tr> <td> <div class="sc-ticket economy"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Economy</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>$15.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
     var ele = document.getElementById('slctTb');
     ele.innerHTML = ht;
   }
-
-
 
   var element = document.getElementsByClassName('reduced');
   for (var i = 0; i < element.length; i++) {
     element[i].addEventListener("click", function () { ReducedClick() }, false);
   }
+
   function ReducedClick() {
     var seatNo = event.target || event.srcElement;
-    ht += '<tr> <td> <div class="sc-ticket reduced"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Reduced</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>€10.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    ht += '<tr> <td> <div class="sc-ticket reduced"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Reduced</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>$10.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
     var ele = document.getElementById('slctTb');
     ele.innerHTML = ht;
   }
