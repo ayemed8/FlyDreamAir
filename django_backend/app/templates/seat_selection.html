@@ -197,7 +197,7 @@
               <div class="sc-right-container">
                 <div id="sc-cart" class="sc-cart">
                   <div class="sc-cart-header">
-                    <button class="sc-cart-btn sc-cart-btn-delete" type="button">
+                    <button onclick="deleteTable();" class="sc-cart-btn sc-cart-btn-delete" type="button">
                       <div class="sc-cart-btn-icon"></div>
                     </button>
                   </div>
@@ -351,8 +351,6 @@
   });
 
 
-
-
   var ele2 = document.getElementById('extra');
   var inner1 = "";
   var pTotal = localStorage.getItem('pTotal');
@@ -371,27 +369,41 @@
  
   var element = document.getElementsByClassName('first-class');
   var ht = '';
+  var seat_array = [];
+
   for (var i = 0; i < element.length; i++) {
     element[i].addEventListener("click", function () { firstClick() }, false);
   }
 
   function firstClick() {
     var seatNo = event.target || event.srcElement;
-    ht += '<tr> <td> <div class="sc-ticket first-class"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">First Class</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>$25.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    var seat_row = '<tr> <td> <div class="sc-ticket first-class"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">First Class</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>$25.00</td> <td> <button onclick="deleteRow(this)" class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    seat_array.push(seat_row);
     var ele = document.getElementById('slctTb');
-    ele.innerHTML = ht;
-  }
+    
+    ele.innerHTML = "";
+    for (var index = 0; index < seat_array.length; index++){
+      ele.innerHTML += seat_array[index];
+    }
 
+  }
 
   var element = document.getElementsByClassName('economy');
   for (var i = 0; i < element.length; i++) {
     element[i].addEventListener("click", function () { EconomyClick() }, false);
   }
+
   function EconomyClick() {
     var seatNo = event.target || event.srcElement;
-    ht += '<tr> <td> <div class="sc-ticket economy"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Economy</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>$15.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    var seat_row = '<tr> <td> <div class="sc-ticket economy"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Economy</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>$15.00</td> <td> <button onclick="deleteRow(this)" class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    seat_array.push(seat_row);
+    
     var ele = document.getElementById('slctTb');
-    ele.innerHTML = ht;
+    ele.innerHTML = "";
+    
+    for (var index = 0; index < seat_array.length; index++){
+      ele.innerHTML+= seat_array[index];
+    }
   }
 
   var element = document.getElementsByClassName('reduced');
@@ -399,11 +411,34 @@
     element[i].addEventListener("click", function () { ReducedClick() }, false);
   }
 
+  function deleteRow(btn) {
+    var row = btn.parentNode.parentNode;
+    var table = row.parentNode;
+
+    if (row.rowIndex > -1) { // only splice array when item is found
+      seat_array.splice(row.rowIndex, 1); // 2nd parameter means remove one item only
+    }
+    
+    table.removeChild(row);
+  }
+
+  function deleteTable(){
+    var table = document.getElementById("slctTb");
+    table.innerHTML = "";
+    seat_array = [];
+  }
+
   function ReducedClick() {
     var seatNo = event.target || event.srcElement;
-    ht += '<tr> <td> <div class="sc-ticket reduced"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Reduced</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>$10.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    var seat_row = '<tr> <td> <div class="sc-ticket reduced"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Reduced</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>$10.00</td> <td> <button onclick="deleteRow(this)" class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    seat_array.push(seat_row);
+    
     var ele = document.getElementById('slctTb');
-    ele.innerHTML = ht;
+    ele.innerHTML = "";
+  
+    for (var index = 0; index < seat_array.length; index++){
+      ele.innerHTML += seat_array[index];
+    }
   }
 
 
