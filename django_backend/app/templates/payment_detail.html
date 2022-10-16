@@ -1,8 +1,9 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 <!--MainDiv-->
-<div id="centerDiv">
-  <br />
-  <div class="card text-white mb-3" style="max-width: 28rem">
+
+<br /> <br /> <br /> <br />
+<center>
+  <div class="card text-white mb-3" style="max-width: 28rem;">
     <div class="card-header"><b>Payment Detail</b></div>
     <div class="card-body">
       <br />
@@ -10,69 +11,75 @@
         <div class="row">
           <div class="col-lg-9 col-md-9 col-sm-9">
             <div class="form-group">
-              <label style="font-size: small" for="exampleInputEmail1"
-                >CARD NUMBER</label
-              >
-              <input
-                type="number"
-                class="form-control"
-                placeholder="1234 &nbsp;&nbsp;5678 &nbsp;&nbsp; 3456 &nbsp;&nbsp; 2456"
-              />
+              <p style="font-size: small; text-align: left !important;" for="exampleInputEmail1">CARD NUMBER</p>
+              <input id="cardNumber" type="number" class="form-control"
+                placeholder="1234 &nbsp;&nbsp;5678 &nbsp;&nbsp; 3456 &nbsp;&nbsp; 2456" />
             </div>
           </div>
           <div class="col-lg-2 col-md-2 col-sm-2">
-            <img
-              style="margin-top: 24px"
-              src="{% static 'assets/VisaIcon.png'%}"
-            />
+            <img style="margin-top: 24px" src="{% static 'assets/VisaIcon.png'%}" />
           </div>
         </div>
         <div class="form-group">
-          <label style="font-size: small" for="exampleInputEmail1"
-            >CARDHOLDER NAME</label
-          >
-          <input type="text" class="form-control" placeholder="Demo User" />
+          <p style="font-size: small;text-align: left !important;" for="exampleInputEmail1">CARDHOLDER NAME</p>
+          <input  id="cardHolderName" type="text" class="form-control" placeholder="Demo User" />
         </div>
         <div class="form-group">
-          <label style="font-size: small" for="exampleInputEmail1"
-            >EXPIRE DATE</label
-          >
-          <input
-            type="date"
-            class="form-control"
-            placeholder="demo@example.com"
-          />
+          <p style="font-size: small; text-align: left !important;" for="exampleInputEmail1">EXPIRE DATE</p>
+          <input  id="expireDate" type="date" class="form-control" placeholder="demo@example.com" />
         </div>
         <div class="row">
           <div class="col-lg-4 col-md-4 col-sm-4">
             <div class="form-group">
-              <label style="font-size: small" for="exampleInputEmail1"
-                >CVV</label
-              >
-              <input
-                type="number"
-                class="form-control"
-                placeholder="1234 5678 3456 2456"
-              />
+              <p style="font-size: small;text-align: left !important;" for="exampleInputEmail1">CVV</p>
+              <input  id="cardCvv" type="number" class="form-control" placeholder="1234 5678 3456 2456" />
             </div>
           </div>
         </div>
         <br />
+        
+
         <center>
-          <button id="LoginBtn" type="submit" class="btn btn-primary">
-            Create User
-          </button>
+          <input type="button" onclick="selectClick()" id="LoginBtn"  value="Confirm" class="btn btn-primary">
+           
+          <script src="//cdn.jsdelivr.net/npm/sweetalert2@11"></script>
+          <script>
+            
+            function selectClick() {
+              Swal.fire({
+            position: 'center',
+            icon: 'success',
+            title: 'Your ticket information would be sent to you by email, Thank you',
+            showConfirmButton: false,
+            timer: 3000
+          })
+          setTimeout(function(){
+            window.location.href = 'http://127.0.0.1:8000/home/';
+         }, 4000);
+ 
+             
+              cardNumber = document.getElementById("cardNumber").value;
+              cardHolderName = document.getElementById("cardHolderName").value;
+              expireDate = document.getElementById("expireDate").value;
+              cardCvv = document.getElementById("cardCvv").value;
+             
+              localStorage.setItem('cardNumber',cardNumber);
+              localStorage.setItem('cardHolderName',cardHolderName);
+              localStorage.setItem('expireDate',expireDate);
+              localStorage.setItem('cardCvv',cardCvv);
+              
+              console.log('Card Number is '+cardNumber+'Card Holder Name is '+cardHolderName+'Card expire Date is '+expireDate+'Card CVV is '+cardCvv);
+              
+            };
+          </script>
+          
         </center>
       </form>
     </div>
   </div>
-</div>
+</center>
 
-<br /><br /><br /><br />
-<br /><br /><br /><br />
-<br /><br /><br /><br />
-<br /><br /><br /><br />
-<br /><br /><br /><br />
-<br /><br /><br /><br />
-<br /><br /><br />
+<br /><br />
+
+<br /><br /><br /><br /><br /><br />
 {% endblock content %}

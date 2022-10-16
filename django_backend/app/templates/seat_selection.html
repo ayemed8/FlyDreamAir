@@ -9,21 +9,14 @@
     <div class="col-lg-8">
       <br />
       <div class="card">
-        <div
-          style="
+        <div style="
             margin-top: 0%;
             padding-top: 0%;
             margin-bottom: 0%;
             padding-bottom: 0%;
-          "
-          class="card-header form-inline"
-        >
-          <img
-            style="background-color: white; padding: 2px"
-            src="{% static 'assets/PassengerUserICon.png'%}"
-            alt="..."
-            class="rounded-circle"
-          />
+          " class="card-header form-inline">
+          <img style="background-color: white; padding: 2px" src="{% static 'assets/PassengerUserICon.png'%}" alt="..."
+            class="rounded-circle" />
           <p style="color: white; padding-top: 20px; font-size: x-large">
             <b>&nbsp; &nbsp;Seates for Flights - A369</b>
           </p>
@@ -204,53 +197,13 @@
               <div class="sc-right-container">
                 <div id="sc-cart" class="sc-cart">
                   <div class="sc-cart-header">
-                    <button
-                      class="sc-cart-btn sc-cart-btn-delete"
-                      type="button"
-                    >
+                    <button class="sc-cart-btn sc-cart-btn-delete" type="button">
                       <div class="sc-cart-btn-icon"></div>
                     </button>
                   </div>
                   <div class="sc-cart-table-container">
-                    <table class="sc-cart-table">
-                      <tr>
-                        <td>
-                          <div class="sc-ticket first-class">
-                            <div class="sc-ticket-stripes"></div>
-                            <div class="sc-ticket-seat-label">A6</div>
-                            <div class="sc-ticket-seat-type">First Class</div>
-                            <div class="sc-ticket-stripes"></div>
-                          </div>
-                        </td>
-                        <td>€25.00</td>
-                        <td>
-                          <button
-                            class="sc-cart-btn sc-cart-btn-delete"
-                            type="button"
-                          >
-                            <div class="sc-cart-btn-icon"></div>
-                          </button>
-                        </td>
-                      </tr>
-                      <tr>
-                        <td>
-                          <div class="sc-ticket first-class">
-                            <div class="sc-ticket-stripes"></div>
-                            <div class="sc-ticket-seat-label">A7</div>
-                            <div class="sc-ticket-seat-type">First Class</div>
-                            <div class="sc-ticket-stripes"></div>
-                          </div>
-                        </td>
-                        <td>€25.00</td>
-                        <td>
-                          <button
-                            class="sc-cart-btn sc-cart-btn-delete"
-                            type="button"
-                          >
-                            <div class="sc-cart-btn-icon"></div>
-                          </button>
-                        </td>
-                      </tr>
+                    <table class="sc-cart-table" id="slctTb">
+
                     </table>
                   </div>
                 </div>
@@ -291,80 +244,39 @@
         <div class="card-body">
           <br />
           <div class="row">
-            <div
-              style="font-size: small"
-              class="col-lg-5 col-md-4 col-sm-4 col-4"
-            >
+            <div style="font-size: small" class="col-lg-4 col-md-4 col-sm-4 col-4">
               <span class="card-text"><b>Base Fare:</b></span>
             </div>
-            <div
-              style="font-size: small"
-              class="col-lg-5 col-md-4 col-sm-4 col-4"
-            >
-              <span>$560x 2 Adults</span>
+            <div style="font-size: small" class="col-lg-6 col-md-4 col-sm-4 col-4">
+              <span>$560x <span id="p">0</span> Adults</span>
             </div>
             <br /><br />
-            <div
-              style="font-size: small"
-              class="col-lg-2 col-md-4 col-sm-4 col-4"
-            >
-              <span class="card-text">$112</span>
+            <div style="font-size: small" class="col-lg-2 col-md-4 col-sm-4 col-4">
+              <span id="pTotal" class="card-text">$0</span>
             </div>
-            <div
-              style="font-size: small"
-              class="col-lg-5 col-md-4 col-sm-4 col-4"
-            >
+          </div>
+          <div class="row">
+            <div style="font-size: small" class="col-lg-4 col-md-4 col-sm-4 col-4">
               <span class="card-text"><b>Extra Services:</b></span>
             </div>
-            <div
-              style="font-size: small"
-              class="col-lg-5 col-md-4 col-sm-4 col-4"
-            >
-              <span>For Passenger1-</span>
+            <div id="extra" class="col-lg-8 col-md-8 col-sm-8 col-8">
+
             </div>
-            <br /><br />
-            <div
-              style="font-size: small"
-              class="col-lg-2 col-md-4 col-sm-4 col-4"
-            >
-              <span class="card-text">$0</span>
-            </div>
-            <div
-              style="font-size: small"
-              class="col-lg-5 col-md-4 col-sm-4 col-4"
-            >
-              <span class="card-text"><b></b></span>
-            </div>
-            <div
-              style="font-size: small"
-              class="col-lg-5 col-md-4 col-sm-4 col-4"
-            >
-              <span>For Passenger1-</span>
-            </div>
-            <br /><br />
-            <div
-              style="font-size: small"
-              class="col-lg-2 col-md-4 col-sm-4 col-4"
-            >
-              <span class="card-text">$560</span>
-            </div>
-            <div
-              style="font-size: small"
-              class="col-lg-5 col-md-4 col-sm-4 col-4"
-            >
+          </div>
+
+          <div style="font-size: small" class="col-lg-5 col-md-4 col-sm-4 col-4">
+            <span class="card-text"><b></b></span>
+          </div>
+
+          <div class="row">
+            <div style="font-size: small" class="col-lg-5 col-md-4 col-sm-4 col-4">
               <span class="card-text"><b>Tax</b></span>
             </div>
-            <div
-              style="font-size: small"
-              class="col-lg-5 col-md-4 col-sm-4 col-4"
-            >
+            <div style="font-size: small" class="col-lg-5 col-md-4 col-sm-4 col-4">
               <span></span>
             </div>
             <br /><br />
-            <div
-              style="font-size: small"
-              class="col-lg-2 col-md-4 col-sm-4 col-4"
-            >
+            <div style="font-size: small" class="col-lg-2 col-md-4 col-sm-4 col-4">
               <span class="card-text">$20</span>
             </div>
           </div>
@@ -373,30 +285,24 @@
             <div class="col-lg-3 col-md-3 col-sm-3 col-3"><b>Total</b></div>
             <div class="col-lg-6 col-md-6 col-sm-6 col-6"></div>
             <div style="float: right" class="col-lg-3 col-md-3 col-sm-3 col-3">
-              &nbsp;&nbsp;<b>$1700</b>
+              &nbsp;&nbsp;<b id="txtTotal"></b>
             </div>
           </div>
         </div>
       </div>
       <div class="sc-cart-footer">
         <br />
-        <button
-          onclick="location.href='{% url 'my-payment' %}'"
-          class="sc-cart-btn sc-cart-btn-submit"
-          type="button"
-        >
-          Checkout
-        </button>
+        <a href="{% url 'my-payment' %}" style="font-size:15px; width:100%"> <button
+            class="sc-cart-btn sc-cart-btn-submit" type="button">
+            Confirm
+          </button></a>
       </div>
     </div>
   </div>
 </div>
 <br /><br /><br /><br />
 <!-- Optional JavaScript -->
-<script
-  type="text/javascript"
-  src="https://cdn.jsdelivr.net/npm/seatchart@0.1.0/dist/seatchart.min.js"
-></script>
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/seatchart@0.1.0/dist/seatchart.min.js"></script>
 <script>
   var options = {
     map: {
@@ -443,5 +349,65 @@
   sc.addEventListener("submit", function handleSubmit(e) {
     alert("Total: " + e.total + "€");
   });
+
+
+
+
+  var ele2 = document.getElementById('extra');
+  var inner1 = "";
+  var pTotal = localStorage.getItem('pTotal');
+  pTotal = pTotal.split(',')
+  var t = 0;
+  for (let j = 0; j < pTotal.length; j++) {
+    inner1 += ' <div class="row"> <div style="font-size: small" class="col-lg-9 col-md-9 col-sm-9 col-9"> <span>For Passenger-' + (j + 1) + '</span> </div> <br /><br /> <div style="font-size: small" class="col-lg-3 col-md-3 col-sm-3 col-3"> <span class="card-text" id="' + j + 'total">$' + pTotal[j] + '</span> </div> </div>';
+    t =  t+parseInt(pTotal[j]);
+  }
+  ele2.innerHTML = inner1;
+ 
+  document.getElementById('pTotal').innerHTML=((pTotal.length)*560).toString();
+  document.getElementById('p').innerHTML=(pTotal.length).toString();
+  document.getElementById('txtTotal').innerHTML=(t+((pTotal.length)*560)+20).toString();
+ 
+ 
+  var element = document.getElementsByClassName('first-class');
+  var ht = '';
+  for (var i = 0; i < element.length; i++) {
+    element[i].addEventListener("click", function () { firstClick() }, false);
+  }
+  function firstClick() {
+    var seatNo = event.target || event.srcElement;
+    ht += '<tr> <td> <div class="sc-ticket first-class"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">First Class</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>€25.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    var ele = document.getElementById('slctTb');
+    ele.innerHTML = ht;
+  }
+
+
+
+
+  var element = document.getElementsByClassName('economy');
+  for (var i = 0; i < element.length; i++) {
+    element[i].addEventListener("click", function () { EconomyClick() }, false);
+  }
+  function EconomyClick() {
+    var seatNo = event.target || event.srcElement;
+    ht += '<tr> <td> <div class="sc-ticket economy"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Economy</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>€15.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    var ele = document.getElementById('slctTb');
+    ele.innerHTML = ht;
+  }
+
+
+
+  var element = document.getElementsByClassName('reduced');
+  for (var i = 0; i < element.length; i++) {
+    element[i].addEventListener("click", function () { ReducedClick() }, false);
+  }
+  function ReducedClick() {
+    var seatNo = event.target || event.srcElement;
+    ht += '<tr> <td> <div class="sc-ticket reduced"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Reduced</div> <div class="sc-ticket-stripes"></div> </div> </td> <td>€10.00</td> <td> <button class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    var ele = document.getElementById('slctTb');
+    ele.innerHTML = ht;
+  }
+
+
 </script>
 {% endblock content %}

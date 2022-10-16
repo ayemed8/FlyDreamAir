@@ -1,331 +1,36 @@
 {% extends 'base.html' %} {% block content %} {% load static %}
 
 <!--MainBody-->
-<div class="container-fluid">
-  <br /><br />
-  <div class="row">
-    <div class="col-lg-12">
-      <br />
-      <div class="card">
-        <div
-          style="
-            margin-top: 0%;
-            padding-top: 0%;
-            margin-bottom: 0%;
-            padding-bottom: 0%;
-          "
-          class="card-header form-inline"
-        >
-          <img
-            style="background-color: white; padding: 2px"
-            src="{% static 'assets/PassengerUserICon.png'%}"
-            alt="..."
-            class="rounded-circle"
-          />
-          <p style="color: white; padding-top: 20px; font-size: x-large">
-            <b> &nbsp; Passenger 1</b>
-          </p>
-        </div>
-        <div class="card-body">
-          <p class="card-title" style="font-size: medium">
-            <b>Passenger Details</b>
-          </p>
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span
-                    style="
-                      font-size: small;
-                      background-color: #2699fb;
-                      color: white;
-                      width: 100px;
-                    "
-                    class="input-group-text"
-                    id="basic-addon1"
-                    >First Name</span
-                  >
-                </div>
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  required
-                />
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span
-                    style="
-                      font-size: small;
-                      background-color: #2699fb;
-                      color: white;
-                      width: 100px;
-                    "
-                    class="input-group-text"
-                    id="basic-addon1"
-                    >Last Name</span
-                  >
-                </div>
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  required
-                />
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span
-                    style="
-                      font-size: small;
-                      background-color: #2699fb;
-                      color: white;
-                      width: 100px;
-                    "
-                    class="input-group-text"
-                    id="basic-addon1"
-                    >Date of Birth</span
-                  >
-                </div>
-                <input
-                  type="date"
-                  class="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  required
-                />
-              </div>
-            </div>
-          </div>
-          <p class="card-title" style="font-size: medium">
-            <b>Contact Infromation</b>
-          </p>
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span
-                    style="
-                      font-size: small;
-                      background-color: #2699fb;
-                      color: white;
-                      width: 100px;
-                    "
-                    class="input-group-text"
-                    id="basic-addon1"
-                    >Phone</span
-                  >
-                </div>
-                <input
-                  type="number"
-                  class="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  required
-                />
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span
-                    style="
-                      font-size: small;
-                      background-color: #2699fb;
-                      color: white;
-                      width: 100px;
-                    "
-                    class="input-group-text"
-                    id="basic-addon1"
-                    >Email</span
-                  >
-                </div>
-                <input
-                  type="email"
-                  class="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  required
-                />
-              </div>
-            </div>
-            {% comment %}
-           
-            {% endcomment %}
-          </div>
-        </div>
-      </div>
-    </div>
-  </div>
-  <br /><br />
-  <div class="row">
-    <div class="col-lg-12">
-      <div class="card">
-        <div
-          style="
-            margin-top: 0%;
-            padding-top: 0%;
-            margin-bottom: 0%;
-            padding-bottom: 0%;
-          "
-          class="card-header form-inline"
-        >
-          <img
-            style="background-color: white; padding: 2px"
-            src="{% static 'assets/PassengerUserICon.png'%}"
-            alt="..."
-            class="rounded-circle"
-          />
-          <p style="color: white; padding-top: 20px; font-size: x-large">
-            <b> &nbsp; Passenger 2</b>
-          </p>
-        </div>
-        <div class="card-body">
-          <p class="card-title" style="font-size: medium">
-            <b>Passenger Details</b>
-          </p>
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span
-                    style="
-                      font-size: small;
-                      background-color: #2699fb;
-                      color: white;
-                      width: 100px;
-                    "
-                    class="input-group-text"
-                    id="basic-addon1"
-                    >First Name</span
-                  >
-                </div>
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  required
-                />
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span
-                    style="
-                      font-size: small;
-                      background-color: #2699fb;
-                      color: white;
-                      width: 100px;
-                    "
-                    class="input-group-text"
-                    id="basic-addon1"
-                    >Last Name</span
-                  >
-                </div>
-                <input
-                  type="text"
-                  class="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  required
-                />
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span
-                    style="
-                      font-size: small;
-                      background-color: #2699fb;
-                      color: white;
-                      width: 100px;
-                    "
-                    class="input-group-text"
-                    id="basic-addon1"
-                    >Date of Birth</span
-                  >
-                </div>
-                <input
-                  type="date"
-                  class="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  required
-                />
-              </div>
-            </div>
-          </div>
-          <p class="card-title" style="font-size: medium">
-            <b>Contact Infromation</b>
-          </p>
-          <div class="row">
-            <div class="col-lg-4">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span
-                    style="
-                      font-size: small;
-                      background-color: #2699fb;
-                      color: white;
-                      width: 100px;
-                    "
-                    class="input-group-text"
-                    id="basic-addon1"
-                    >Phone</span
-                  >
-                </div>
-                <input
-                  type="number"
-                  class="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  required
-                />
-              </div>
-            </div>
-            <div class="col-lg-4">
-              <div class="input-group mb-3">
-                <div class="input-group-prepend">
-                  <span
-                    style="
-                      font-size: small;
-                      background-color: #2699fb;
-                      color: white;
-                      width: 100px;
-                    "
-                    class="input-group-text"
-                    id="basic-addon1"
-                    >Email</span
-                  >
-                </div>
-                <input
-                  type="email"
-                  class="form-control"
-                  aria-label="Username"
-                  aria-describedby="basic-addon1"
-                  required
-                />
-              </div>
-            </div>
-          </div>
-        </div>
-      </div>
-      <div class="col-lg-4">
-            <a style="float:right;font-size: large; position:relative; left:850px; top:50px;" href="{% url 'extra-services' %}" class="btn btn-primary">Next</a>
-          </div>
-    </div>
-  </div>
-</div>
-<br /><br /><br /><br />
+<div class="container-fluid" id="main">
 
+</div>
+
+<br /><br />
+<center> <button onclick="save()" class="btn btn-primary form-control" style="font-size:15px; width:150px">Confirm</a>
+</center><br /><br />
+<script>
+  var total = parseInt(localStorage.getItem('totalPassanger'));
+  var inner = "";
+  for (let i = 0; i < total; i++) {
+    inner += '<div  class="row"><div class="col-lg-12"><br/><div class="card"><div style="margin-top:0%;padding-top:0%;margin-bottom:0%;padding-bottom:0%;" class="card-header form-inline"><img style="background-color:white;padding: 2px;" src="../static/assets/PassengerUserICon.png" alt="..." class="rounded-circle"><p style="color:white;padding-top:20px;font-size:x-large"><b>&nbsp;Passenger ' + (i + 1) + '</b></p></div><div class="card-body"><p class="card-title" style="font-size:medium"><b>Passenger Details</b></p><div class="row"><div class="col-lg-4"><div class="input-group mb-3"><div class="input-group-prepend"><span style="font-size:small;background-color:#2699fb;color:white;width:100px;" class="input-group-text" id="basic-addon1">First Name</span></div><input id="' + i + 'txtFirstName" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required/></div></div><div class="col-lg-4"><div class="input-group mb-3"><div class="input-group-prepend"><span style="font-size:small;background-color:#2699fb;color:white;width:100px;" class="input-group-text" id="basic-addon1">LastName</span></div><input id="' + i + 'LastName" type="text"class="form-control" aria-label="Username" aria-describedby="basic-addon1" required/></div></div><div class="col-lg-4"><div class="input-group mb-3"><div class="input-group-prepend"><span style="font-size:small;background-color:#2699fb;color:white;width:100px;" class="input-group-text" id="basic-addon1">Date of Birth</span></div><input id="' + i + 'txtDateOfBirth" type="date" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required/></div></div></div><p class="card-title" style="font-size:medium"><b>Contact Infromation</b></p><div class="row"><div class="col-lg-4"><div class="input-group mb-3"><div class="input-group-prepend"><span style="font-size:small;background-color:#2699fb;color:white;width:100px;" class="input-group-text" id="basic-addon1">Phone</span></div><input id="' + i + 'txtPhone" type="number" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required/></div></div><div class="col-lg-4"><div class="input-group mb-3"><div class="input-group-prepend"><span style="font-size:small;background-color:#2699fb;color:white;width:100px;" class="input-group-text" id="basic-addon1">Email</span></div><input id="' + i + 'txtEmail;" type="text" class="form-control" aria-label="Username" aria-describedby="basic-addon1" required/></div></div>{%comment%}{%endcomment%}</div></div></div></div></div>';
+  }
+  var ele = document.getElementById('main');
+  ele.innerHTML = inner;
+
+
+  function save() {
+    var users = [];
+    for (let i = 0; i < total; i++) {
+      var temp = {};
+      temp.fname = document.getElementById(i + 'txtFirstName').value;
+      temp.lname = document.getElementById(i + 'LastName').value;
+      temp.dob = document.getElementById(i + 'txtDateOfBirth').value;
+      temp.phone = document.getElementById(i + 'txtPhone').value;
+      // temp.email = document.getElementById(i + 'txtEmail').value;
+      users.push(temp);
+    }
+    localStorage.setItem('users',users);
+    window.location.href = '/flight-extra-services'; //relative to domain
+  }
+</script>
 {% endblock content %}
