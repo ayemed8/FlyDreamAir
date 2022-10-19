@@ -354,17 +354,20 @@
   var ele2 = document.getElementById('extra');
   var inner1 = "";
   var pTotal = localStorage.getItem('pTotal');
+  var total = parseInt(localStorage.getItem('totalPassanger'));
+  var ttotal = parseInt(localStorage.getItem('ttotal'));
+  
   pTotal = pTotal.split(',')
   var t = 0;
   for (let j = 0; j < pTotal.length; j++) {
-    inner1 += ' <div class="row"> <div style="font-size: small" class="col-lg-9 col-md-9 col-sm-9 col-9"> <span>For Passenger-' + (j + 1) + '</span> </div> <br /><br /> <div style="font-size: small" class="col-lg-3 col-md-3 col-sm-3 col-3"> <span class="card-text" id="' + j + 'total">$' + pTotal[j] + '</span> </div> </div>';
+    inner1 += ' <div class="row"> <div style="font-size: small" class="col-lg-9 col-md-9 col-sm-9 col-9"> <span></span> </div> <br /><br /> <div style="font-size: small" class="col-lg-3 col-md-3 col-sm-3 col-3"> <span  class="card-text" id="' + j + 'total">$' + total*60 + '</span> </div> </div>';
     t =  t+parseInt(pTotal[j]);
   }
   ele2.innerHTML = inner1;
  
-  document.getElementById('pTotal').innerHTML=((pTotal.length)*560).toString();
-  document.getElementById('p').innerHTML=(pTotal.length).toString();
-  document.getElementById('txtTotal').innerHTML=(t+((pTotal.length)*560)+20).toString();
+  document.getElementById('pTotal').innerHTML=((total)*560).toString();
+  document.getElementById('p').innerHTML=(total).toString();
+  document.getElementById('txtTotal').innerHTML=((total*60) + (20 + (560 * total))).toString();
  
  
   var element = document.getElementsByClassName('first-class');
