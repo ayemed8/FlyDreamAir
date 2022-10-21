@@ -1,0 +1,473 @@
+{% extends 'base.html' %} {% block content %} {% load static %}
+
+<!--MainBody-->
+<div class="container-fluid">
+  <br /><br />
+  <h2><b>Seat Selection For Departure Flight</b></h2>
+  <br />
+  <div class="row">
+    <div class="col-lg-8">
+      <br />
+      <div class="card">
+        <div style="
+            margin-top: 0%;
+            padding-top: 0%;
+            margin-bottom: 0%;
+            padding-bottom: 0%;
+          " class="card-header form-inline">
+          <img style="background-color: white; padding: 2px" src="{% static 'assets/PassengerUserICon.png'%}" alt="..."
+            class="rounded-circle" />
+          <p style="color: white; padding-top: 20px; font-size: x-large">
+            <b>&nbsp; &nbsp;Seates for Flights - A369</b>
+          </p>
+        </div>
+        <div class="card-body">
+          <div id="container" class="sc-main-container">
+            <div class="sc-map">
+              <div class="sc-indexer sc-indexer-rows">
+                <div class="sc-seat-indexer">A</div>
+                <div class="sc-seat-indexer">B</div>
+                <div class="sc-seat-indexer">C</div>
+                <div class="sc-spacer"></div>
+                <div class="sc-seat-indexer">D</div>
+                <div class="sc-seat-indexer">E</div>
+                <div class="sc-seat-indexer">F</div>
+                <div class="sc-seat-indexer">G</div>
+                <div class="sc-spacer"></div>
+                <div class="sc-seat-indexer">H</div>
+                <div class="sc-seat-indexer">I</div>
+                <div class="sc-seat-indexer">J</div>
+              </div>
+              <div class="sc-map-inner-container">
+                <div class="sc-front">Front</div>
+                <div class="sc-indexer sc-indexer-columns">
+                  <div class="sc-seat-indexer">1</div>
+                  <div class="sc-seat-indexer">2</div>
+                  <div class="sc-seat-indexer">3</div>
+                  <div class="sc-seat-indexer">4</div>
+                  <div class="sc-seat-indexer">5</div>
+                  <div class="sc-spacer"></div>
+
+                  <div class="sc-seat-indexer">6</div>
+                  <div class="sc-seat-indexer">7</div>
+                  <div class="sc-seat-indexer">8</div>
+                  <div class="sc-seat-indexer">9</div>
+                  <div class="sc-seat-indexer">10</div>
+                </div>
+                <div class="sc-seats-container">
+                  <div class="sc-seat-row">
+                    <div class="sc-seat sc-seat-disabled first-class">A1</div>
+                    <div class="sc-seat sc-seat-available first-class">A2</div>
+                    <div class="sc-seat sc-seat-available first-class">A3</div>
+                    <div class="sc-seat sc-seat-reserved first-class">A4</div>
+                    <div class="sc-seat sc-seat-reserved first-class">A5</div>
+                    <div class="sc-spacer"></div>
+                    <div class="sc-seat sc-seat-selected first-class">A6</div>
+                    <div class="sc-seat sc-seat-selected first-class">A7</div>
+                    <div class="sc-seat sc-seat-available first-class">A8</div>
+                    <div class="sc-seat sc-seat-available first-class">A9</div>
+                    <div class="sc-seat sc-seat-disabled first-class">A10</div>
+                  </div>
+                  <div class="sc-seat-row">
+                    <div class="sc-seat sc-seat-available first-class">B1</div>
+                    <div class="sc-seat sc-seat-available first-class">B2</div>
+                    <div class="sc-seat sc-seat-available first-class">B3</div>
+                    <div class="sc-seat sc-seat-available first-class">B4</div>
+                    <div class="sc-seat sc-seat-available first-class">B5</div>
+                    <div class="sc-spacer"></div>
+                    <div class="sc-seat sc-seat-available first-class">B6</div>
+                    <div class="sc-seat sc-seat-available first-class">B7</div>
+                    <div class="sc-seat sc-seat-available first-class">B8</div>
+                    <div class="sc-seat sc-seat-available first-class">B9</div>
+                    <div class="sc-seat sc-seat-available first-class">B10</div>
+                  </div>
+                  <div class="sc-seat-row">
+                    <div class="sc-seat sc-seat-available first-class">C1</div>
+                    <div class="sc-seat sc-seat-available first-class">C2</div>
+                    <div class="sc-seat sc-seat-available first-class">C3</div>
+                    <div class="sc-seat sc-seat-available first-class">C4</div>
+                    <div class="sc-seat sc-seat-available first-class">C5</div>
+                    <div class="sc-spacer"></div>
+                    <div class="sc-seat sc-seat-available first-class">C6</div>
+                    <div class="sc-seat sc-seat-available first-class">C7</div>
+                    <div class="sc-seat sc-seat-available first-class">C8</div>
+                    <div class="sc-seat sc-seat-available first-class">C9</div>
+                    <div class="sc-seat sc-seat-available first-class">C10</div>
+                  </div>
+                  <div class="sc-spacer"></div>
+                  <div class="sc-seat-row">
+                    <div class="sc-seat sc-seat-available economy">D1</div>
+                    <div class="sc-seat sc-seat-available economy">D2</div>
+                    <div class="sc-seat sc-seat-available economy">D3</div>
+                    <div class="sc-seat sc-seat-available economy">D4</div>
+                    <div class="sc-seat sc-seat-available economy">D5</div>
+                    <div class="sc-spacer"></div>
+                    <div class="sc-seat sc-seat-available economy">D6</div>
+                    <div class="sc-seat sc-seat-available economy">D7</div>
+                    <div class="sc-seat sc-seat-available economy">D8</div>
+                    <div class="sc-seat sc-seat-available economy">D9</div>
+                    <div class="sc-seat sc-seat-available economy">D10</div>
+                  </div>
+                  <div class="sc-seat-row">
+                    <div class="sc-seat sc-seat-available economy">E1</div>
+                    <div class="sc-seat sc-seat-available economy">E2</div>
+                    <div class="sc-seat sc-seat-available economy">E3</div>
+                    <div class="sc-seat sc-seat-available economy">E4</div>
+                    <div class="sc-seat sc-seat-available economy">E5</div>
+                    <div class="sc-spacer"></div>
+                    <div class="sc-seat sc-seat-available economy">E6</div>
+                    <div class="sc-seat sc-seat-available economy">E7</div>
+                    <div class="sc-seat sc-seat-available economy">E8</div>
+                    <div class="sc-seat sc-seat-available economy">E9</div>
+                    <div class="sc-seat sc-seat-available economy">E10</div>
+                  </div>
+                  <div class="sc-seat-row">
+                    <div class="sc-seat sc-seat-available economy">F1</div>
+                    <div class="sc-seat sc-seat-available economy">F2</div>
+                    <div class="sc-seat sc-seat-available economy">F3</div>
+                    <div class="sc-seat sc-seat-available economy">F4</div>
+                    <div class="sc-seat sc-seat-available economy">F5</div>
+                    <div class="sc-spacer"></div>
+                    <div class="sc-seat sc-seat-available economy">F6</div>
+                    <div class="sc-seat sc-seat-available economy">F7</div>
+                    <div class="sc-seat sc-seat-available economy">F8</div>
+                    <div class="sc-seat sc-seat-available economy">F9</div>
+                    <div class="sc-seat sc-seat-available economy">F10</div>
+                  </div>
+                  <div class="sc-seat-row">
+                    <div class="sc-seat sc-seat-available economy">G1</div>
+                    <div class="sc-seat sc-seat-available economy">G2</div>
+                    <div class="sc-seat sc-seat-available economy">G3</div>
+                    <div class="sc-seat sc-seat-available economy">G4</div>
+                    <div class="sc-seat sc-seat-available economy">G5</div>
+                    <div class="sc-spacer"></div>
+                    <div class="sc-seat sc-seat-available economy">G6</div>
+                    <div class="sc-seat sc-seat-available economy">G7</div>
+                    <div class="sc-seat sc-seat-available economy">G8</div>
+                    <div class="sc-seat sc-seat-available economy">G9</div>
+                    <div class="sc-seat sc-seat-available economy">G10</div>
+                  </div>
+                  <div class="sc-spacer"></div>
+                  <div class="sc-seat-row">
+                    <div class="sc-seat sc-seat-available reduced">H1</div>
+                    <div class="sc-seat sc-seat-available reduced">H2</div>
+                    <div class="sc-seat sc-seat-available reduced">H3</div>
+                    <div class="sc-seat sc-seat-available reduced">H4</div>
+                    <div class="sc-seat sc-seat-available reduced">H5</div>
+                    <div class="sc-spacer"></div>
+                    <div class="sc-seat sc-seat-available reduced">H6</div>
+                    <div class="sc-seat sc-seat-available reduced">H7</div>
+                    <div class="sc-seat sc-seat-available reduced">H8</div>
+                    <div class="sc-seat sc-seat-available reduced">H9</div>
+                    <div class="sc-seat sc-seat-available reduced">H10</div>
+                  </div>
+                  <div class="sc-seat-row">
+                    <div class="sc-seat sc-seat-available reduced">I1</div>
+                    <div class="sc-seat sc-seat-available reduced">I2</div>
+                    <div class="sc-seat sc-seat-available reduced">I3</div>
+                    <div class="sc-seat sc-seat-available reduced">I4</div>
+                    <div class="sc-seat sc-seat-available reduced">I5</div>
+                    <div class="sc-spacer"></div>
+                    <div class="sc-seat sc-seat-available reduced">I6</div>
+                    <div class="sc-seat sc-seat-available reduced">I7</div>
+                    <div class="sc-seat sc-seat-available reduced">I8</div>
+                    <div class="sc-seat sc-seat-available reduced">I9</div>
+                    <div class="sc-seat sc-seat-available reduced">I10</div>
+                  </div>
+                  <div class="sc-seat-row">
+                    <div class="sc-seat sc-seat-available reduced">J1</div>
+                    <div class="sc-seat sc-seat-available reduced">J2</div>
+                    <div class="sc-seat sc-seat-available reduced">J3</div>
+                    <div class="sc-seat sc-seat-available reduced">J4</div>
+                    <div class="sc-seat sc-seat-available reduced">J5</div>
+                    <div class="sc-spacer"></div>
+                    <div class="sc-seat sc-seat-available reduced">J6</div>
+                    <div class="sc-seat sc-seat-available reduced">J7</div>
+                    <div class="sc-seat sc-seat-available reduced">J8</div>
+                    <div class="sc-seat sc-seat-available reduced">J9</div>
+                    <div class="sc-seat sc-seat-available reduced">J10</div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-8">
+              <div class="sc-right-container">
+                <div id="sc-cart" class="sc-cart">
+                  <div class="sc-cart-header">
+                    <button onclick="deleteTable();" class="sc-cart-btn sc-cart-btn-delete" type="button">
+                      <div class="sc-cart-btn-icon"></div>
+                    </button>
+                  </div>
+                  <div class="sc-cart-table-container">
+                    <table class="sc-cart-table" id="slctTb">
+
+                    </table>
+                  </div>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-4" style="margin-top: 100px">
+              <ul id="sc-legend" class="sc-legend">
+                <li class="sc-legend-item">
+                  <div class="sc-legend-bullet first-class"></div>
+                  <p class="sc-legend-description">First Class ($45)</p>
+                </li>
+                <li class="sc-legend-item">
+                  <div class="sc-legend-bullet economy"></div>
+                  <p class="sc-legend-description">Economy ($35)</p>
+                </li>
+                <li class="sc-legend-item">
+                  <div class="sc-legend-bullet reduced"></div>
+                  <p class="sc-legend-description">Reduced</p>
+                </li>
+                <li class="sc-legend-item">
+                  <div class="sc-legend-bullet sc-seat-reserved"></div>
+                  <p class="sc-legend-description">Reserved</p>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="col-lg-4">
+      <br />
+      <div class="card">
+        <div style="padding-top: 0%; padding-bottom: 0%" class="card-header">
+          <p style="color: white; padding-top: 20px; font-size: x-large">
+            <b>Fare Summary</b>
+          </p>
+        </div>
+        <div class="card-body">
+          <br />
+          <div class="row">
+            <div style="font-size: small" class="col-lg-4 col-md-4 col-sm-4 col-4">
+              <span class="card-text"><b>Base Fare:</b></span>
+            </div>
+            <div style="font-size: small" class="col-lg-6 col-md-4 col-sm-4 col-4">
+              <span>$560x <span id="p">0</span> Adults</span>
+            </div>
+            <br /><br />
+            <div style="font-size: small" class="col-lg-2 col-md-4 col-sm-4 col-4">
+              <span id="pTotal" class="card-text">$0</span>
+            </div>
+          </div>
+          <div class="row">
+            <div style="font-size: small" class="col-lg-4 col-md-4 col-sm-4 col-4">
+              <span class="card-text"><b>Extra Services:</b></span>
+            </div>
+            <div id="extra" class="col-lg-8 col-md-8 col-sm-8 col-8">
+
+            </div>
+          </div>
+
+          <div style="font-size: small" class="col-lg-5 col-md-4 col-sm-4 col-4">
+            <span class="card-text"><b></b></span>
+          </div>
+
+          <div class="row">
+            <div style="font-size: small" class="col-lg-5 col-md-4 col-sm-4 col-4">
+              <span class="card-text"><b>Tax</b></span>
+            </div>
+            <div style="font-size: small" class="col-lg-5 col-md-4 col-sm-4 col-4">
+              <span></span>
+            </div>
+            <br /><br />
+            <div style="font-size: small" class="col-lg-2 col-md-4 col-sm-4 col-4">
+              <span class="card-text">$20</span>
+            </div>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="col-lg-3 col-md-3 col-sm-3 col-3"><b>Total</b></div>
+            <div class="col-lg-6 col-md-6 col-sm-6 col-6"></div>
+            <div style="float: right" class="col-lg-3 col-md-3 col-sm-3 col-3">
+              &nbsp;&nbsp;<b id="txtTotal">$ </b>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="sc-cart-footer">
+        <br />
+        <a href="{% url 'my-payment' %}" style="font-size:15px; width:100%"> <button
+            class="sc-cart-btn sc-cart-btn-submit" type="button">
+            Confirm
+          </button></a>
+      </div>
+    </div>
+  </div>
+</div>
+<br /><br /><br /><br />
+<!-- Optional JavaScript -->
+<script type="text/javascript" src="https://cdn.jsdelivr.net/npm/seatchart@0.1.0/dist/seatchart.min.js"></script>
+<script>
+  var options = {
+    map: {
+      rows: 10,
+      columns: 10,
+      seatTypes: {
+        default: {
+          label: "Economy",
+          cssClass: "economy",
+          price: 15,
+        },
+        first: {
+          label: "First Class",
+          cssClass: "first-class",
+          price: 25,
+          seatRows: [0, 1, 2],
+        },
+        reduced: {
+          label: "Reduced",
+          cssClass: "reduced",
+          price: 10,
+          seatRows: [7, 8, 9],
+        },
+      },
+      disabledSeats: [
+        { row: 0, col: 0 },
+        { row: 0, col: 9 },
+      ],
+      reservedSeats: [
+        { row: 0, col: 3 },
+        { row: 0, col: 4 },
+      ],
+      selectedSeats: [
+        { row: 0, col: 5 },
+        { row: 0, col: 6 },
+      ],
+      rowSpacers: [3, 7],
+      columnSpacers: [5],
+    },
+  };
+
+  var element = document.getElementById("container");
+  var sc = new Seatchart(element, options);
+  sc.addEventListener("submit", function handleSubmit(e) {
+    alert("Total: " + e.total + "$");
+  });
+
+
+  var ele2 = document.getElementById('extra');
+  var inner1 = "";
+  var pTotal = localStorage.getItem('pTotal');
+  var total = parseInt(localStorage.getItem('totalPassanger'));
+  var ttotal = parseInt(localStorage.getItem('ttotal'));
+  
+  pTotal = pTotal.split(',')
+  var t = 0;
+  for (let j = 0; j < pTotal.length; j++) {
+    inner1 += ' <div class="row"> <div style="font-size: small" class="col-lg-9 col-md-9 col-sm-9 col-9"> <span></span> </div> <br /><br /> <div style="font-size: small" class="col-lg-3 col-md-3 col-sm-3 col-3"> <span  class="card-text" id="' + j + 'total">$' + total*60 + '</span> </div> </div>';
+    t =  t+parseInt(pTotal[j]);
+  }
+  ele2.innerHTML = inner1;
+ 
+  document.getElementById('pTotal').innerHTML=((total)*560).toString();
+  document.getElementById('p').innerHTML=(total).toString();
+  document.getElementById('txtTotal').innerHTML=((total*60) + (20 + (560 * total))).toString();
+ 
+ 
+  var element = document.getElementsByClassName('first-class');
+  var ht = '';
+  var seat_array = [];
+  
+  var fare_summary_total = document.getElementById('txtTotal');
+
+  for (var i = 0; i < element.length; i++) {
+    element[i].addEventListener("click", function () { firstClick() }, false);
+  }
+
+  function firstClick() {
+    var seatNo = event.target || event.srcElement;
+    var seat_row = '<tr> <td> <div class="sc-ticket first-class"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">First Class</div> <div class="sc-ticket-stripes"></div> </div> </td> <td id = \'seat-price\'>$45.00</td> <td> <button onclick="deleteRow(this)" class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    seat_array.push(seat_row);
+    var ele = document.getElementById('slctTb');
+    
+    ele.innerHTML = "";
+    for (var index = 0; index < seat_array.length; index++){
+      ele.innerHTML += seat_array[index];
+    }
+
+    var total_int = parseInt(fare_summary_total.innerHTML);
+    total_int += 45;
+    fare_summary_total.innerHTML = total_int.toString();
+
+  }
+
+  var element = document.getElementsByClassName('economy');
+  for (var i = 0; i < element.length; i++) {
+    element[i].addEventListener("click", function () { EconomyClick() }, false);
+  }
+
+  function EconomyClick() {
+    var seatNo = event.target || event.srcElement;
+    var seat_row = '<tr> <td> <div class="sc-ticket economy"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Economy</div> <div class="sc-ticket-stripes"></div> </div> </td> <td id = \'seat-price\'>$35.00</td> <td> <button onclick="deleteRow(this)" class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    seat_array.push(seat_row);
+    
+    var ele = document.getElementById('slctTb');
+    ele.innerHTML = "";
+    
+    for (var index = 0; index < seat_array.length; index++){
+      ele.innerHTML+= seat_array[index];
+    }
+
+    var total_int = parseInt(fare_summary_total.innerHTML);
+    total_int += 35;
+    fare_summary_total.innerHTML = total_int.toString();
+
+  }
+
+  var element = document.getElementsByClassName('reduced');
+  for (var i = 0; i < element.length; i++) {
+    element[i].addEventListener("click", function () { ReducedClick() }, false);
+  }
+
+  function deleteRow(btn) {
+    var row = btn.parentNode.parentNode;
+    var table = row.parentNode;
+    var price = row.childNodes[3].innerText;
+    var ele = document.getElementById('slctTb');
+
+    if (price == ''){
+      console.log('ok');
+    }
+    else{
+      price = parseInt(price.replace('$', ''));
+      var total_int = parseInt(fare_summary_total.innerHTML);
+      total_int -= price;
+      fare_summary_total.innerHTML = total_int.toString();
+    }
+
+    // remove item from seat array using row index
+    if (row.rowIndex > -1) { // only splice array when item is found
+      seat_array.splice(row.rowIndex, 1); // 2nd parameter means remove one item only
+    }
+    
+    table.removeChild(row);
+  }
+
+  function deleteTable(){
+    var table = document.getElementById("slctTb");
+    table.innerHTML = "";
+    seat_array = [];
+  }
+
+  function ReducedClick() {
+    var seatNo = event.target || event.srcElement;
+    var seat_row = '<tr> <td> <div class="sc-ticket reduced"> <div class="sc-ticket-stripes"></div> <div class="sc-ticket-seat-label">' + seatNo.innerHTML + '</div> <div class="sc-ticket-seat-type">Reduced</div> <div class="sc-ticket-stripes"></div> </div> </td> <td  id = \'seat-price\' > </td> <td> <button onclick="deleteRow(this)" class="sc-cart-btn sc-cart-btn-delete" type="button" > <div class="sc-cart-btn-icon"></div> </button> </td> </tr>';
+    seat_array.push(seat_row);
+    
+    var ele = document.getElementById('slctTb');
+    ele.innerHTML = "";
+  
+    for (var index = 0; index < seat_array.length; index++){
+      ele.innerHTML += seat_array[index];
+    }
+  }
+
+
+</script>
+{% endblock content %}
